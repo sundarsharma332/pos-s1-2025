@@ -11,6 +11,9 @@ router.use(authenticateUser);
 // POST /api/inventory/products - Create new product
 router.post('/products', inventoryController.createProduct);
 
+// POST /api/inventory/products/batch - Batch create products
+router.post('/products/batch', inventoryController.batchCreateProducts);
+
 // GET /api/inventory/products - Get all products with pagination and filters
 router.get('/products', inventoryController.getProducts);
 

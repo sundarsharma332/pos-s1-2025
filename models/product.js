@@ -29,16 +29,15 @@ const productSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Category is required'],
     enum: [
-      'Food & Beverages',
+      'Beer',
+      'Wine',
+      'Tobacco',
+      'Grocery NT',
+      'Grocery T',
       'Electronics',
-      'Clothing',
-      'Books',
-      'Health & Beauty',
-      'Home & Garden',
-      'Sports',
-      'Automotive',
-      'Office Supplies',
-      'Other'
+      'Medicine',
+      'Candy',
+      'Others',
     ]
   },
   
@@ -95,6 +94,12 @@ const productSchema = new mongoose.Schema({
     length: { type: Number, min: 0 },
     width: { type: Number, min: 0 },
     height: { type: Number, min: 0 }
+  },
+
+  barcode: {
+    type: String,
+    trim: true,
+    default: null
   },
   
   // Tax Information
